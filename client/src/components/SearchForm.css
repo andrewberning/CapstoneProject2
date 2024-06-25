@@ -1,0 +1,27 @@
+.search-form input:focus {
+  box-shadow: none;
+  border-color: #ced4da;
+}
+
+.search-form .input-group {
+  position: relative;
+  width: 100%;
+}
+
+.search-form .form-control {
+  border-right: none;
+  border-radius: 0;
+}
+
+.search-form .input-group-text {
+  background: white;
+  border-left: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1; /* Ensure the button is above the input */
+}
+
+.search-form .input-group-text .fa-search {
+  color: #6c757d;
+}

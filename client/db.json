@@ -1,0 +1,80 @@
+{
+  "categories": [
+    {"title": "clothing"},
+    {"title": "electronics"},
+    {"title": "toys"},
+    {"title": "grocery"},
+    {"title": "furniture"},
+    {"title": "sports"}
+    
+  ],
+  "clothing": [
+    {
+      "id": "dress-shirt",
+      "name": "Dress Shirt",
+      "description": "A dress shirt for any event.",
+      "price": "$29.99",
+      "image": "https://www.shutterstock.com/image-vector/lost-items-line-vector-icon-260nw-1436787446.jpg"
+    },
+    {
+      "id": "tank-top",
+      "name": "Tank Top",
+      "description": "Comfortable Tank Top.",
+      "price": "$5.99",
+      "image": "https://www.shutterstock.com/image-vector/lost-items-line-vector-icon-260nw-1436787446.jpg"
+    },
+    {
+      "id": "t-shirt",
+      "name": "T-Shirt",
+      "description": "An awesome t-shirt to wear.",
+      "price": "$13.99",
+      "image": "https://www.shutterstock.com/image-vector/lost-items-line-vector-icon-260nw-1436787446.jpg"
+    }
+  ],
+  "electronics": [
+    {
+      "id": "ps5",
+      "name": "PS5",
+      "description": "A fun gaming console.",
+      "price": "$599.99",
+      "image": "https://www.shutterstock.com/image-vector/lost-items-line-vector-icon-260nw-1436787446.jpg"
+    },
+    {
+      "id": "macbook-pro",
+      "name": "MacBook Pro Laptop",
+      "description": "Ultra-fast laptop",
+      "price": "$1399.99",
+      "image": "https://www.shutterstock.com/image-vector/lost-items-line-vector-icon-260nw-1436787446.jpg"
+    },
+    {
+      "id": "galaxy-s24",
+      "name": "Galaxy S24 Phone",
+      "description": "Sleek cell phone.",
+      "price": "$499.99",
+      "image": "https://www.shutterstock.com/image-vector/lost-items-line-vector-icon-260nw-1436787446.jpg"
+    }
+  ],
+  "toys": [
+    {
+      "id": "teddy-bear",
+      "name": "Teddy Bear",
+      "description": "A snuggly teddy bear.",
+      "price": "$29.99",
+      "image": "https://www.shutterstock.com/image-vector/lost-items-line-vector-icon-260nw-1436787446.jpg"
+    },
+    {
+      "id": "puzzle",
+      "name": "Puzzle",
+      "description": "An amazing puzzle.",
+      "price": "$15.99",
+      "image": "https://www.shutterstock.com/image-vector/lost-items-line-vector-icon-260nw-1436787446.jpg"
+    },
+    {
+      "id": "bop-it",
+      "name": "Bop-it",
+      "description": "A cool memory game.",
+      "price": "$23.99",
+      "image": "https://www.shutterstock.com/image-vector/lost-items-line-vector-icon-260nw-1436787446.jpg"
+    }
+  ]
+}
