@@ -8,9 +8,6 @@
     "dev": "nodemon server.js",
     "test": "jest -i"
   },
-  "test": {
-
-  },
   "author": "",
   "license": "ISC",
   "dependencies": {
