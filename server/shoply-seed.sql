@@ -1,5 +1,5 @@
 -- Insert sample users
-INSERT INTO users (username, password_hash, first_name, last_name, email)
+INSERT INTO users (username, password, first_name, last_name, email)
 VALUES ('testuser',
         '$2b$12$AZH7virni5jlTTiGgEg4zu3lSvAw68qVEfSIOjJ3RqtbJbdW/Oi5q',
         'Test',
