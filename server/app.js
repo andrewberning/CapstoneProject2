@@ -7,12 +7,14 @@ const cors = require("cors");
 
 const { NotFoundError } = require("./expressError");
 
+const authRoutes = require("./routes/auth");
 const categoriesRoutes = require("./routes/categories");
 
 const app = express();
 
 app.use(cors());
 
+app.use("/auth", authRoutes);
 app.use("/categories", categoriesRoutes);
 
 /** Handle 404 errors -- this matches everything */
