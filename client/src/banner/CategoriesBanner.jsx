@@ -8,7 +8,6 @@ export default function CategoriesBanner() {
   const [categories, setCategories] = useState([]);
 
   useEffect(function getFiveCategoriesOnMount() {
-    // search();
     async function getCategories(category) {
       let categories = await ShoplyApi.getCategories(category);
       setCategories(categories);
