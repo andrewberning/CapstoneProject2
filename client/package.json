@@ -4,9 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"npm run dev:react\" \"npm run dev:json-server\"",
-    "dev:react": "vite",
-    "dev:json-server": "json-server --watch db.json --port 5001",
+    "dev": "vite",
     "build": "vite build",
     "test": "vitest",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
