@@ -3,10 +3,17 @@
 /** Express app for shoply */
 
 const express = require("express");
+const cors = require("cors");
 
 const { NotFoundError } = require("./expressError");
 
+const categoriesRoutes = require("./routes/categories");
+
 const app = express();
+
+app.use(cors());
+
+app.use("/categories", categoriesRoutes);
 
 /** Handle 404 errors -- this matches everything */
 app.use(function (req, res, next) {
