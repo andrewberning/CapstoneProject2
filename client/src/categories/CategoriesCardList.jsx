@@ -5,8 +5,8 @@ export default function CategoriesCardList({ categories }) {
     <div className="ClothingCardList d-flex justify-content-center gap-4">
       {categories.map(category => (
         <CategoriesCard
-          key={category.title}
-          category={category.title}
+          key={category.id}
+          category={category.name}
         />
       ))}
     </div>
