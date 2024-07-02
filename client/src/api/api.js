@@ -1,12 +1,12 @@
 import axios from "axios";
 
-const BASE_API_URL = "http://localhost:5001";
+const BASE_API_URL = "http://localhost:3000";
 
 class ShoplyApi {
 
   static async getCategories() {
     const result = await axios.get(`${BASE_API_URL}/categories`);
-    return result.data;
+    return result.data.categories;
   }
 
   static async getProductsByCategory(category) {
