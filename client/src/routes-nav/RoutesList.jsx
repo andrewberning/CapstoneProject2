@@ -8,12 +8,12 @@ import CartList from "../cart/CartList";
 import ProductDetail from "../products/ProductDetail";
 
 
-export default function RoutesList() {
+export default function RoutesList({ login, signup }) {
   return (
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/login" element={<LoginForm />} />
-        <Route path="/signup" element={<SignupForm />} />
+        <Route path="/login" element={<LoginForm login={login} />} />
+        <Route path="/signup" element={<SignupForm signup={signup} />} />
         <Route path="/cart" element={<CartList />} />
         <Route path="/categories" element={<CategoriesList />} />
         <Route path="/categories/:category" element={<CategoryList />} />
