@@ -1,6 +1,7 @@
-import { useState } from "react";
-// import UserContext from "../auth/UserContext";
-import SignInOffcanvas from "./SingInOffcanvas";
+import { useState, useContext } from "react";
+import UserContext from "../auth/UserContext";
+import SignInOffcanvas from "./SignInOffcanvas";
+import LogOutOffcanvas from "./LogOutOffcanvas";
 import SearchForm from "../components/SearchForm";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -10,18 +11,28 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart, faUser } from "@fortawesome/free-solid-svg-icons";
 import "./Navigation.css";
 
-export default function Navigation() {
+export default function Navigation({ logout }) {
+  const { currentUser } = useContext(UserContext);
   const [showOffcanvas, setShowOffcanvas] = useState(false);
   const [showSignIn, setShowSignIn] = useState(false);
+  const [showUserMenu, setShowUserMenu] = useState(false);
 
   const handleOffcanvasClose = () => setShowOffcanvas(false);
   const handleOffcanvasShow = () => setShowOffcanvas(true);
 
   const handleSignInClose = () => setShowSignIn(false);
   const handleSignInShow = () => setShowSignIn(true);
+
+  const handleUserMenuClose = () => setShowUserMenu(false);
+  const handleUserMenuShow = () => setShowUserMenu(true);
+
+  const handleLogout = () => {
+    logout();
+    handleUserMenuClose();
+  }
 
   return (
     <Navbar expand={false} className="bg-body-tertiary">
@@ -38,7 +49,13 @@ export default function Navigation() {
         </Col>
         <Col xs="auto">
           <Nav className="ms-auto">
-            <Nav.Link href="" onClick={handleSignInShow}>Sign In</Nav.Link>
+            {currentUser 
+             ? <Nav.Link href="" onClick={handleUserMenuShow}>
+               <FontAwesomeIcon icon={faUser} /> {currentUser.username}
+               </Nav.Link>
+             : <Nav.Link href="" onClick={handleSignInShow}>Sign In</Nav.Link>
+            }
+            
           </Nav>
         </Col>
         <Col xs="auto">
@@ -73,6 +90,8 @@ export default function Navigation() {
 
     {/* Sign In Offcanvas */}
     <SignInOffcanvas show={showSignIn} handleClose={handleSignInClose} />
+
+    <LogOutOffcanvas show={showUserMenu} handleClose={handleUserMenuClose} logout={handleLogout} />
   </Navbar>
   );
 }
