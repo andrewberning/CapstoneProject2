@@ -22,7 +22,7 @@ export default function SignupForm({ signup }) {
     evt.preventDefault();
     let result = await signup(formData);
     if (result.success) {
-      navigate("/companies");
+      navigate("/");
     } else {
       setFormErrors(result.errors);
     }
