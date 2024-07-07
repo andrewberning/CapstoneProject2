@@ -7,15 +7,20 @@ const cors = require("cors");
 
 const { NotFoundError } = require("./expressError");
 
+const { authenticateJWT } = require("./middleware/auth");
 const authRoutes = require("./routes/auth");
 const categoriesRoutes = require("./routes/categories");
+const usersRoutes = require("./routes/users");
 
 const app = express();
 
 app.use(cors());
+app.use(express.json());
+app.use(authenticateJWT);
 
 app.use("/auth", authRoutes);
 app.use("/categories", categoriesRoutes);
+app.use("/users", usersRoutes);
 
 /** Handle 404 errors -- this matches everything */
 app.use(function (req, res, next) {
