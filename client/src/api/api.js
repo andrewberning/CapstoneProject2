@@ -23,7 +23,6 @@ class ShoplyApi {
 
   static async getCurrentUser(username) {
     const result = await axios.get(`${BASE_API_URL}/users/${username}`);
-    console.log("result for getCurrentUser is: ", result.data.user);
     return result.data.user;
   }
 
@@ -32,6 +31,10 @@ class ShoplyApi {
     return result.data.token;
   }
 
+  static async signup(data) {
+    const result = await axios.post(`${BASE_API_URL}/auth/register`, data);
+    return result.data.token;
+  }
 }
 
 export default ShoplyApi;
