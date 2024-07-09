@@ -22,15 +22,15 @@ export default function ProductDetail() {
 
   return (
     
-    <div className="ProductDetail">
-      <div className="card-body">
+    <div className="ProductDetail card">
       <div className="product-img-container w-25">
-        <img src={product.image} className="card-img" />
+        <img src={product.image_url} className="card-img" />
       </div>
+      <div className="card-body">
         <div className="cart-item-details">
           <div className="card-title">{product.name}</div>
           <div className="card-text">{product.description}</div>
-          <div className="card-price">{product.price}</div>
+          <div className="card-price">${product.price}</div>
         </div>
       </div>
     </div>
