@@ -12,8 +12,14 @@ VALUES ('testuser',
         'testadmin@gmail.com');
 
 -- Insert sample categories
-INSERT INTO categories (name)
-VALUES ('electronics'), ('toys'), ('clothing'), ('groceries'), ('furniture'), ('sports');
+INSERT INTO categories (name, image_url)
+VALUES 
+('electronics', 'https://www.shutterstock.com/image-vector/lost-items-line-vector-icon-260nw-1436787446.jpg'), 
+('toys', 'https://www.shutterstock.com/image-vector/lost-items-line-vector-icon-260nw-1436787446.jpg'),
+('clothing', 'https://www.shutterstock.com/image-vector/lost-items-line-vector-icon-260nw-1436787446.jpg'), 
+('groceries', 'https://www.shutterstock.com/image-vector/lost-items-line-vector-icon-260nw-1436787446.jpg'), 
+('furniture', 'https://www.shutterstock.com/image-vector/lost-items-line-vector-icon-260nw-1436787446.jpg'), 
+('sports', 'https://www.shutterstock.com/image-vector/lost-items-line-vector-icon-260nw-1436787446.jpg');
 
 -- Insert sample products
 INSERT INTO products (name, description, price, image_url, stock, category_id)
