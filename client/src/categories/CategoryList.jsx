@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ShoplyApi from "../api/api";
-import ProductsCard from "../products/ProductsCard";
+import ProductCard from "../products/ProductCard";
 
 export default function CategoryList() {
   const { category } = useParams();
@@ -10,7 +10,10 @@ export default function CategoryList() {
 
   useEffect(function getCategoryProductsOnMount() {
     async function getCategoryProducts() {
-      setProducts(await ShoplyApi.getProductsByCategory(category));
+      let categoryData = await ShoplyApi.getCategory(category);
+      let categoryId = categoryData.category.id;
+      let products = await ShoplyApi.getProductsByCategoryId(categoryId);
+      setProducts(products);
     }
 
     getCategoryProducts();
@@ -26,14 +29,14 @@ export default function CategoryList() {
           <div className="d-flex justify-content-center">
           <div className="productsList d-flex flex-wrap">
           {products.map(product => (
-            <ProductsCard 
+            <ProductCard 
             key={product.id}
             id={product.id}
             category={category}
             name={product.name}
             description={product.description}
             price={product.price}
-            image={product.image}
+            image={product.image_url}
             />
           ))}
           </div>
