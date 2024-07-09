@@ -1,0 +1,30 @@
+.ProductsCard {
+  width: 250px; /* Set a fixed width */
+  height: 400px; /* Set a fixed height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px; /* Add some margin for spacing */
+}
+
+.product-img-container {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Ensure the image fits within the container */
+}
+
+.card-body {
+  flex-grow: 0;
+  padding: 10px;
+}
+
+.btn {
+  margin: 10px; /* Add margin for spacing */
+}
