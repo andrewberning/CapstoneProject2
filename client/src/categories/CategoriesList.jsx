@@ -7,8 +7,8 @@ export default function CategoriesList() {
 
   
   useEffect(function getAllCategoriesOnMount() {
-    async function getAllCategories(category) {
-      let categories = await ShoplyApi.getCategories(category);
+    async function getAllCategories() {
+      let categories = await ShoplyApi.getCategories();
       setCategories(categories);
     }
 
