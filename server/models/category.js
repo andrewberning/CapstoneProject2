@@ -8,7 +8,7 @@ class Category {
 
   static async getAll() {
     const results = await db.query(
-      `SELECT id, name 
+      `SELECT id, name, image_url 
        FROM categories
        ORDER BY name`);
     return results.rows;
@@ -16,7 +16,7 @@ class Category {
 
   static async get(category) {
     const result = await db.query(
-      `SELECT id, name
+      `SELECT id, name, image_url
        FROM categories
        WHERE name = $1`, [category]
     );
