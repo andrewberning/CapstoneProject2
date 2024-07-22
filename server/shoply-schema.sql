@@ -41,7 +41,8 @@ CREATE TABLE cart_items (
   id SERIAL PRIMARY KEY,
   cart_id INTEGER REFERENCES carts(id),
   product_id INTEGER REFERENCES products(id),
-  quantity INTEGER NOT NULL
+  quantity INTEGER NOT NULL,
+  price NUMERIC(10, 2) NOT NULL
 );
 
 -- Create Orders Table
