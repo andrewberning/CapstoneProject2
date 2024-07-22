@@ -1,18 +1,29 @@
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import UserContext from '../auth/UserContext';
 import "./ProductCard.css"
 
 
 export default function ProductCard({ id, name, price, image, category }) {
-  const handleAddToCart = () => {
-    console.log("Add to cart button clicked!!!!");
+  const { currentUser, hasAddedToCart, addToCart } = useContext(UserContext);
+  const [added, setAdded] = useState(false);
 
-    // Need to use function from props to add item to cart
-    // let product = { id, name, price, image, category };
-    // Ex: addToCart(product)
+  useEffect(function updateCartStatus() {
+    setAdded(hasAddedToCart(id))
+  }, [id, hasAddedToCart]);
+
+  async function handleAddToCart(evt) {
+    evt.preventDefault();
+    if (added) return;
+
+
+    const item = { id, name, price, image, category };
+    addToCart(currentUser, item, 1);
+    setAdded(true);
   }
   
   return (
-    <div className="ProductsCard card d-flex flex-column">
+    <div className="ProductCard card d-flex flex-column">
       <Link className="product-link" to={`/${category}/${id}`}>
         <div className="product-img-container">
           <img src={image} className="card-img" />
@@ -24,8 +35,12 @@ export default function ProductCard({ id, name, price, image, category }) {
           </div>
         </div>
       </Link>
-      <button onClick={handleAddToCart} className="btn btn-primary mt-2">
-        Add to Cart
+      <button 
+        className="btn btn-primary mt-2"
+        onClick={handleAddToCart} 
+        disabled={added}
+      >
+        {added ? "Added" : "Add to cart"}
       </button>
     </div>
   );
