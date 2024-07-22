@@ -15,7 +15,7 @@ import { faShoppingCart, faUser } from "@fortawesome/free-solid-svg-icons";
 import "./Navigation.css";
 
 export default function Navigation({ logout }) {
-  const { currentUser } = useContext(UserContext);
+  const { currentUser, categories} = useContext(UserContext);
   const [showOffcanvas, setShowOffcanvas] = useState(false);
   const [showSignIn, setShowSignIn] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
@@ -55,7 +55,6 @@ export default function Navigation({ logout }) {
                </Nav.Link>
              : <Nav.Link href="" onClick={handleSignInShow}>Sign In</Nav.Link>
             }
-            
           </Nav>
         </Col>
         <Col xs="auto">
@@ -80,9 +79,9 @@ export default function Navigation({ logout }) {
       <Offcanvas.Body>
         <Nav className="me-auto">
           <NavDropdown title="Categories" id="offcanvasNavbarDropdown-expand">
-            <NavDropdown.Item href="/categories/clothing">Clothing</NavDropdown.Item>
-            <NavDropdown.Item href="/categories/electronics">Electronics</NavDropdown.Item>
-            <NavDropdown.Item href="/categories/toys">Toys</NavDropdown.Item>
+          {categories.map(category => (
+            <NavDropdown.Item key={category.id} href={`/categories/${category.name}`}>{category.name}</NavDropdown.Item>
+          ))}
           </NavDropdown>
         </Nav>
       </Offcanvas.Body>
