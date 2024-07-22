@@ -1,8 +1,11 @@
-import CategoryCard from "./CategoryCard"
+import { useContext } from "react";
+import CategoryCard from "./CategoryCard";
+import UserContext from "../auth/UserContext";
 
-export default function CategoriesCardList({ categories }) {
+export default function CategoriesCardList() {
+  const { categories } = useContext(UserContext);
   return (
-    <div className="ClothingCardList d-flex justify-content-center gap-4">
+    <div className="CategoriesCardList d-flex justify-content-center gap-4">
       {categories.map(category => (
         <CategoryCard
           key={category.id}
