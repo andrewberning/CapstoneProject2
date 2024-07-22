@@ -2,6 +2,7 @@
 
 const db = require("../config/db.js");
 const bcrypt = require("bcrypt");
+const Cart = require("./cart.js"); 
 const {
   NotFoundError,
   BadRequestError,
@@ -57,14 +58,14 @@ class User {
   static async register(
       { username, password, firstName, lastName, email }) {
     const duplicateCheck = await db.query(
-          `SELECT username
+          `SELECT id
            FROM users
-           WHERE username = $1`,
-        [username],
+           WHERE email = $1`,
+        [email],
     );
 
     if (duplicateCheck.rows[0]) {
-      throw new BadRequestError(`Duplicate username: ${username}`);
+      throw new BadRequestError(`Duplicate email: ${email}`);
     }
 
     const hashedPassword = await bcrypt.hash(password, BCRYPT_WORK_FACTOR);
@@ -77,7 +78,7 @@ class User {
             last_name,
             email)
            VALUES ($1, $2, $3, $4, $5)
-           RETURNING username, first_name AS "firstName", last_name AS "lastName", email`,
+           RETURNING id, username, first_name AS "firstName", last_name AS "lastName", email`,
         [
           username,
           hashedPassword,
@@ -88,7 +89,6 @@ class User {
     );
 
     const user = result.rows[0];
-
     return user;
   }
 
@@ -102,7 +102,8 @@ class User {
 
   static async get(username) {
     const userRes = await db.query(
-          `SELECT username,
+          `SELECT id,
+                  username,
                   first_name AS "firstName",
                   last_name AS "lastName",
                   email
@@ -112,9 +113,25 @@ class User {
     );
 
     const user = userRes.rows[0];
-    console.log("user model: ", user);
 
     if (!user) throw new NotFoundError(`No user: ${username}`);
+
+    const cart = await Cart.findByUserId(user.id);
+    user.cartId = cart.id;
+
+    const userCartItemsRes = await db.query(
+      `SELECT ci.product_id,
+              ci.quantity,
+              p.name,
+              p.description,
+              p.price,
+              p.image_url,
+              p.category_id
+       FROM cart_items ci
+       JOIN products p ON ci.product_id = p.id
+       WHERE ci.cart_id = $1`, [cart.id]);
+
+    user.cartItems = userCartItemsRes.rows;
 
     return user;
   }
