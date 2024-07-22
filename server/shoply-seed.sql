@@ -52,12 +52,12 @@ VALUES
 (NULL, '660e8400-e29b-41d4-a716-446655440001');
 
 -- Insert sample cart items
-INSERT INTO cart_items (cart_id, product_id, quantity)
+INSERT INTO cart_items (cart_id, product_id, quantity, price)
 VALUES
-(1, 1, 1),
-(1, 3, 2),
-(2, 2, 1),
-(3, 4, 1);
+(1, 1, 1, 499.99),
+(1, 3, 2, 599.99),
+(2, 2, 1, 999.99),
+(3, 4, 1, 29.99);
 
 -- Insert sample orders
 INSERT INTO orders (user_id, guest_id, total_price, status)
@@ -70,6 +70,6 @@ VALUES
 INSERT INTO order_items (order_id, product_id, quantity, price)
 VALUES
 (1, 1, 1, 499.99),
-(1, 3, 2, 1199.98),
+(1, 3, 2, 599.99),
 (2, 2, 1, 999.99),
 (3, 4, 1, 29.99)
