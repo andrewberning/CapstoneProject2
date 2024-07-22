@@ -22,8 +22,19 @@ class ShoplyApi {
   }
 
   static async getProduct(id) {
-    const result = await axios.get(`${BASE_API_URL}/products//product/${id}`);
+    const result = await axios.get(`${BASE_API_URL}/products/product/${id}`);
     return result.data.product;
+  }
+
+  static async getCartItems(id) {
+    const result = await axios.get(`${BASE_API_URL}/cart/${id}`);
+    return result.data.items;
+  }
+
+  static async addToCart(user, item, quantity) {
+    const result = await axios.post(`${BASE_API_URL}/cart/items`, { user, item, quantity });
+    console.log(result.data);
+    return result.data.cartItem;
   }
 
   static async getCurrentUser(username) {
