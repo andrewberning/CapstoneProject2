@@ -5,7 +5,6 @@ import ShoplyApi from "../api/api";
 
 export default function ProductDetail() {
   const { id, category } = useParams();
-
   const [product, setProduct] = useState(null);
 
   useEffect(function getProductForUser() {
@@ -15,6 +14,15 @@ export default function ProductDetail() {
 
     getProduct();
   }, [id, category]);
+
+    
+  const handleAddToCart = () => {
+    console.log("Add to cart button clicked!!!!");
+
+    // Need to use function from props to add item to cart
+    // let product = { id, name, price, image, category };
+    // Ex: addToCart(product)
+  }
 
   if (!product) return (
     <h2>Product not found.</h2>
@@ -33,6 +41,9 @@ export default function ProductDetail() {
           <div className="card-price">${product.price}</div>
         </div>
       </div>
+      <button onClick={handleAddToCart} className="btn btn-primary mt-2">
+        Add to Cart
+      </button>
     </div>
   )
 }
