@@ -57,7 +57,7 @@ router.post("/register", async function (req, res, next) {
 
     const newUser = await User.register({ ...req.body });
     const token = createToken(newUser);
-    const newCart = await Cart.createCart(newUser.id);
+    await Cart.createCart(newUser.id);
     return res.status(201).json({ token });
   } catch(err) {
     return next(err);
