@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import ShoplyApi from "../api/api";
+import UserContext from "../auth/UserContext";
 
 
 export default function ProductDetail() {
   const { id, category } = useParams();
+  const { currentUser, hasAddedToCart, addToCart } = useContext(UserContext);
   const [product, setProduct] = useState(null);
 
   useEffect(function getProductForUser() {
@@ -16,12 +18,11 @@ export default function ProductDetail() {
   }, [id, category]);
 
     
-  const handleAddToCart = () => {
-    console.log("Add to cart button clicked!!!!");
-
-    // Need to use function from props to add item to cart
-    // let product = { id, name, price, image, category };
-    // Ex: addToCart(product)
+  async function handleAddToCart(evt) {
+    evt.preventDefault();
+    // if (added) return;
+    addToCart(currentUser, product , 1);
+    // setAdded(true);
   }
 
   if (!product) return (
