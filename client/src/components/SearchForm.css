@@ -1,10 +1,17 @@
+.SearchForm {
+  position: relative;
+}
+
+.search-form {
+  width: 100%;
+}
+
 .search-form input:focus {
   box-shadow: none;
   border-color: #ced4da;
 }
 
 .search-form .input-group {
-  position: relative;
   width: 100%;
 }
 
@@ -19,9 +26,45 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1; /* Ensure the button is above the input */
+  z-index: 1;
 }
 
 .search-form .input-group-text .fa-search {
   color: #6c757d;
+}
+
+.search-results-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 100%; /* Ensure it stays at least as wide as the form */
+  z-index: 1000;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.search-results-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.search-results-list li:last-child {
+  border-bottom: none;
+}
+
+.search-results-list li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  width: 100%;
+}
+
+.search-results-list li a:hover {
+  background-color: #f8f8f8;
 }

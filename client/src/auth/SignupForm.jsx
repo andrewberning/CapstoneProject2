@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Alert from "../components/Alert";
+import UserContext from "./UserContext";
 
-export default function SignupForm({ signup }) {
+export default function SignupForm() {
   const navigate = useNavigate();
+  const { signup } = useContext(UserContext);
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -42,8 +44,9 @@ export default function SignupForm({ signup }) {
           <div className="card-body">
             <form onSubmit={handleSubmit}>
               <div className="form-group">
-                <label>Username</label>
+                <label htmlFor="username">Username</label>
                 <input
+                    id="username"
                     name="username"
                     className="form-control"
                     value={formData.username}
@@ -51,8 +54,9 @@ export default function SignupForm({ signup }) {
                 />
               </div>
               <div className="form-group">
-                <label>Password</label>
+                <label htmlFor="password">Password</label>
                 <input
+                    id="password"
                     type="password"
                     name="password"
                     className="form-control"
@@ -61,8 +65,9 @@ export default function SignupForm({ signup }) {
                 />
               </div>
               <div className="form-group">
-                <label>First Name</label>
+                <label htmlFor="firstName">First Name</label>
                 <input
+                    id="firstName"
                     name="firstName"
                     className="form-control"
                     value={formData.firstName}
@@ -70,8 +75,9 @@ export default function SignupForm({ signup }) {
                 />
               </div>
               <div className="form-group">
-                <label>Last Name</label>
+                <label htmlFor="lastName">Last Name</label>
                 <input
+                    id="lastName"
                     name="lastName"
                     className="form-control"
                     value={formData.lastName}
@@ -79,8 +85,9 @@ export default function SignupForm({ signup }) {
                 />
               </div>
               <div className="form-group">
-                <label>Email</label>
+                <label htmlFor="email">Email</label>
                 <input
+                    id="email"
                     type="email"
                     name="email"
                     className="form-control"

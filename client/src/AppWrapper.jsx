@@ -1,10 +1,13 @@
 import { BrowserRouter } from "react-router-dom";
+import { UserProvider } from "./auth/UserContext";
 import App from "./App";
 
 function AppWrapper() {
   return (
     <BrowserRouter>
-      <App />
+      <UserProvider>
+        <App />
+      </UserProvider>
     </BrowserRouter>
   );
 }

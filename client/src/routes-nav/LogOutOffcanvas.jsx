@@ -9,7 +9,7 @@ const UserOffcanvas = ({ show, handleClose, logout }) => {
       </Offcanvas.Header>
       <Offcanvas.Body>
         <Nav className="flex-column">
-          <Nav.Link href="/account">Account</Nav.Link>
+          <Nav.Link href="/account">Account Info</Nav.Link>
           <Nav.Link href="#" onClick={logout}>Logout</Nav.Link>
         </Nav>
       </Offcanvas.Body>

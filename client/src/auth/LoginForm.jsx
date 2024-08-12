@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Alert from "../components/Alert";
+import UserContext from "./UserContext";
 
-export default function LoginForm({ login }) {
+export default function LoginForm() {
   const navigate = useNavigate();
+  const { login } = useContext(UserContext);
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -28,7 +30,7 @@ export default function LoginForm({ login }) {
   /** Update form data field */
   function handleChange(evt) {
     const { name, value } = evt.target;
-    setFormData(l => ({ ...l, [name]: value }));
+    setFormData(f => ({ ...f, [name]: value }));
   }
 
   return (
@@ -40,8 +42,9 @@ export default function LoginForm({ login }) {
           <div className="card-body">
             <form onSubmit={handleSubmit}>
               <div className="form-group">
-                <label>Username</label>
+                <label htmlFor="username">Username</label>
                 <input
+                    id="username"
                     name="username"
                     className="form-control"
                     value={formData.username}
@@ -51,8 +54,9 @@ export default function LoginForm({ login }) {
                 />
               </div>
               <div className="form-group">
-                <label>Password</label>
+                <label htmlFor="password">Password</label>
                 <input
+                    id="password"
                     type="password"
                     name="password"
                     className="form-control"
@@ -69,7 +73,7 @@ export default function LoginForm({ login }) {
 
               <button
                   className="btn btn-primary float-right"
-                  onSubmit={handleSubmit}
+                  type="submit"
               >
                 Submit
               </button>
