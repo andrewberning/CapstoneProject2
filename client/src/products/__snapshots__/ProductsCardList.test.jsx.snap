@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ProductsCardList component > matches snapshot 1`] = `
+<DocumentFragment>
+  <p
+    class="lead text-center"
+  >
+    Category not found.
+  </p>
+</DocumentFragment>
+`;
