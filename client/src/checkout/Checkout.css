@@ -1,0 +1,25 @@
+.Checkout {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.checkout-container {
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.checkout-details p {
+  font-size: 1.1rem;
+}
+
+#paypal-button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.error-message {
+  text-align: center;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,38 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Checkout component > matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="Checkout my-4"
+  >
+    <h2
+      class="text-center mb-4"
+    >
+      Checkout
+    </h2>
+    <div
+      class="checkout-container card p-4 shadow-sm"
+    >
+      <div
+        class="checkout-details"
+      >
+        <p
+          class="mb-4"
+        >
+          Items (0): 
+          <strong>
+            $0.00
+          </strong>
+        </p>
+        <div
+          id="paypal-button-container"
+        >
+          <div
+            class=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
