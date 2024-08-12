@@ -1,5 +1,6 @@
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Nav from 'react-bootstrap/Nav';
+import { Link } from 'react-router-dom';
 
 const UserOffcanvas = ({ show, handleClose, logout }) => {
   return (
@@ -9,7 +10,7 @@ const UserOffcanvas = ({ show, handleClose, logout }) => {
       </Offcanvas.Header>
       <Offcanvas.Body>
         <Nav className="flex-column">
-          <Nav.Link href="/account">Account Info</Nav.Link>
+          <Link to={"/account"}>Account Info</Link>
           <Nav.Link href="#" onClick={logout}>Logout</Nav.Link>
         </Nav>
       </Offcanvas.Body>
