@@ -3,6 +3,10 @@ import Nav from 'react-bootstrap/Nav';
 import { Link } from 'react-router-dom';
 
 const UserOffcanvas = ({ show, handleClose, logout }) => {
+  const handleLinkClick = () => {
+    handleClose();
+  };
+
   return (
     <Offcanvas show={show} onHide={handleClose} placement="end">
       <Offcanvas.Header closeButton>
@@ -10,8 +14,8 @@ const UserOffcanvas = ({ show, handleClose, logout }) => {
       </Offcanvas.Header>
       <Offcanvas.Body>
         <Nav className="flex-column">
-          <Link to={"/account"}>Account Info</Link>
-          <Nav.Link href="#" onClick={logout}>Logout</Nav.Link>
+          <Link to={"/account"} className='nav-link' onClick={handleLinkClick}>Account Info</Link>
+          <Link to="#" className='nav-link' onClick={logout}>Logout</Link>
         </Nav>
       </Offcanvas.Body>
     </Offcanvas>
