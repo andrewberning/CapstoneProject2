@@ -1,4 +1,21 @@
 .CategoriesBanner {
   background-color: salmon;
-  border: 1px solid black;
+  text-align: center;
+}
+
+.categories-title-container {
+  padding-top: 20px;
+}
+
+.categories-title-container h2 {
+  margin: 0;
+}
+
+.all-categories-link-container {
+  padding: 20px;
+}
+
+.all-categories-link-container a {
+  text-decoration: none;
+  color: white;
 }

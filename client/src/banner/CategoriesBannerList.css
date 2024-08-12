@@ -1,0 +1,35 @@
+.CategoriesBannerList {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.CategoriesBannerList .categories-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px; 
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.CategoriesBannerList .categories-list li {
+  flex: 1 1 calc(20% - 20px); 
+  max-width: calc(20% - 20px); 
+}
+
+@media (max-width: 768px) {
+  .CategoriesBannerList .categories-list li {
+    flex: 1 1 calc(45% - 20px); 
+    max-width: calc(45% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .CategoriesBannerList .categories-list li {
+    flex: 1 1 100%; 
+    max-width: 100%;
+  }
+}
