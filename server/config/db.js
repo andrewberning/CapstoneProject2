@@ -1,11 +1,23 @@
 /** Database setup for shoply. */
 
 const { Client } = require("pg");
-const { DB_URI } = require("./config");
+const { getDatabaseUri } = require("./config")
+// const { DB_URI } = require("./config");
 
-const client = new Client(DB_URI);
+let DB_URI;
 
-client.connect();
+if (process.env.NODE_ENV === "test") {
+  DB_URI = "postgresql:///jobly_test";
+} else {
+  "postgres://qtlxddvu:9AapQXd0wpq5dQCyugzefWrH3emu8stW@kala.db.elephantsql.com/qtlxddvu"
+}
+
+// const client = new Client(DB_URI);
+let db = new Client({
+  connectionString: DB_URI
+});
+
+db.connect();
 
 
-module.exports = client;
+module.exports = db;
