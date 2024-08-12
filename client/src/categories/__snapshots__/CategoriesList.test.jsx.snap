@@ -1,0 +1,22 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CategoriesList component > matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="CategoriesList"
+  >
+    <h2
+      class="title"
+    >
+      Categories
+    </h2>
+    <div
+      class="CategoriesCardList"
+    >
+      <ul
+        class="categories-list"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

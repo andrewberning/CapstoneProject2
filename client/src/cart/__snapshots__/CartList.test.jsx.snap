@@ -1,0 +1,58 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CategoriesBanner component > matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="CartList"
+  >
+    <div
+      class="cart-title-container"
+    >
+      <h2>
+        's Cart
+      </h2>
+    </div>
+    <div
+      class="cart-details-container"
+    >
+      <div
+        class="cart-items-container"
+      >
+        <h2>
+          Cart Items
+        </h2>
+        <h2>
+          Your cart is empty
+        </h2>
+      </div>
+      <div
+        class="order-summary-container"
+      >
+        <div
+          class="order-summary-title"
+        >
+          <h4>
+            Order Summary
+          </h4>
+        </div>
+        <div
+          class="order-summary-total"
+        >
+          <p>
+            Number of items: 0
+          </p>
+          <p>
+            Subtotal: $0.00
+          </p>
+        </div>
+        <a
+          class="btn btn-primary mt-3"
+          href="/checkout"
+        >
+          Proceed to Checkout
+        </a>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

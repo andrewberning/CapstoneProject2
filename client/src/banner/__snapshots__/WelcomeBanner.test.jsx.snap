@@ -1,0 +1,22 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CategoriesBanner component > matches snapshot 1`] = `
+<DocumentFragment>
+  <section
+    class="WelcomeBanner d-flex justify-content-center align-items-center"
+  >
+    <div
+      class="text-center "
+    >
+      <h2>
+        Welcome to Shoply !
+      </h2>
+      <p
+        class="lead"
+      >
+        Everything in one, convenient place.
+      </p>
+    </div>
+  </section>
+</DocumentFragment>
+`;

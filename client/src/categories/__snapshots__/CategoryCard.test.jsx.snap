@@ -1,0 +1,29 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CategoryCard component > matches snapshot 1`] = `
+<DocumentFragment>
+  <li
+    class="CategoryCard"
+  >
+    <a
+      class="category-link card flex-column"
+      href="/categories/undefined"
+    >
+      <div
+        class="category-img-container"
+      >
+        <img
+          class="card-img"
+        />
+      </div>
+      <div
+        class="card-body"
+      >
+        <div
+          class="card-title text-center"
+        />
+      </div>
+    </a>
+  </li>
+</DocumentFragment>
+`;
