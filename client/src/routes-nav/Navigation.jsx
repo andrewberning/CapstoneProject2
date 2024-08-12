@@ -60,9 +60,9 @@ export default function Navigation({ logout }) {
         </Col>
         <Col xs="auto">
           <Nav className="ms-auto">
-            <Nav.Link href="/cart">
+            <Link to="/cart">
             <FontAwesomeIcon icon={faShoppingCart} />
-            </Nav.Link>
+            </Link>
           </Nav>
         </Col>
       </Row>
