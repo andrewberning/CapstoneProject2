@@ -1,0 +1,72 @@
+{
+  "type": "object",
+  "properties": {
+      "name": {
+          "type": "string",
+          "minLength": 1
+      },
+      "address": {
+          "type": "string",
+          "minLength": 1
+      },
+      "city": {
+          "type": "string",
+          "minLength": 1
+      },
+      "state": {
+          "type": "string",
+          "minLength": 1
+      },
+      "zip": {
+          "type": "string",
+          "minLength": 1
+      },
+      "country": {
+          "type": "string",
+          "minLength": 1
+      },
+      "cartItems": {
+          "type": "array",
+          "items": {
+              "type": "object",
+              "properties": {
+                  "product_id": {
+                      "type": "number"
+                  },
+                  "quantity": {
+                      "type": "number",
+                      "minimum": 1
+                  },
+                  "required": [
+                      "product_id",
+                      "quantity"
+                  ]
+              }
+          },
+          "totalItems": {
+              "type": "number",
+              "minimum": 1
+          },
+          "totalAmount": {
+              "type": "number",
+              "minimum": 0
+          },
+          "user_id": {
+              "type": "number"
+          }
+      },
+      "required": [
+          "name",
+          "address",
+          "city",
+          "state",
+          "zip",
+          "country",
+          "cartItems",
+          "totalItems",
+          "totalAmount",
+          "userId"
+      ],
+      "additionalProperties": false
+  }
+}
