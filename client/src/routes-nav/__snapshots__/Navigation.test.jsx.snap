@@ -1,0 +1,377 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Navigation component > matches snapshot 1`] = `
+<DocumentFragment>
+  <nav
+    class="bg-body-tertiary navbar navbar-light"
+  >
+    <div
+      class="container-fluid"
+    >
+      <div
+        class="w-100 align-items-center row"
+      >
+        <div
+          class="col-auto"
+        >
+          <a
+            class="navbar-brand"
+            href="/"
+          >
+            Shoply
+          </a>
+        </div>
+        <div
+          class="col-auto"
+        >
+          <button
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+            class="navbar-toggler collapsed"
+            type="button"
+          >
+            <span
+              class="navbar-toggler-icon"
+            />
+          </button>
+        </div>
+        <div
+          class="flex-grow-1 col"
+        >
+          <div
+            class="SearchForm"
+          >
+            <form
+              class="search-form d-flex align-items-center"
+              role="search"
+            >
+              <div
+                class="input-group"
+              >
+                <input
+                  aria-label="Search"
+                  class="form-control"
+                  name="searchTerm"
+                  placeholder="Search..."
+                  type="text"
+                  value=""
+                />
+                <button
+                  class="input-group-text"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="svg-inline--fa fa-magnifying-glass "
+                    data-icon="magnifying-glass"
+                    data-prefix="fas"
+                    focusable="false"
+                    role="img"
+                    viewBox="0 0 512 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div
+          class="col-auto"
+        >
+          <div
+            class="ms-auto navbar-nav"
+          >
+            <a
+              class="nav-link"
+              href="#"
+              role="button"
+              tabindex="0"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-user "
+                data-icon="user"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
+                  fill="currentColor"
+                />
+              </svg>
+               testuser
+            </a>
+          </div>
+        </div>
+        <div
+          class="col-auto"
+        >
+          <div
+            class="ms-auto navbar-nav"
+          >
+            <a
+              class="nav-link"
+              data-rr-ui-event-key="/cart"
+              href="/cart"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-cart-shopping "
+                data-icon="cart-shopping"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                viewBox="0 0 576 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                  fill="currentColor"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-labelledby="offcanvasNavbarLabel"
+      class="offcanvas offcanvas-start"
+      id="offcanvasNavbar-expand"
+    >
+      <div
+        class="offcanvas-header"
+      >
+        <div
+          class="offcanvas-title h5"
+          id="offcanvasNavbarLabel-expand"
+        >
+          Shoply
+        </div>
+        <button
+          aria-label="Close"
+          class="btn-close"
+          type="button"
+        />
+      </div>
+      <div
+        class="offcanvas-body"
+      >
+        <div
+          class="me-auto navbar-nav"
+        >
+          <div
+            class="nav-item dropdown"
+          >
+            <a
+              aria-expanded="false"
+              class="dropdown-toggle nav-link"
+              href="#"
+              id="offcanvasNavbarDropdown-expand"
+              role="button"
+              tabindex="0"
+            >
+              Categories
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`Navigation component > matches snapshot when logged out 1`] = `
+<DocumentFragment>
+  <nav
+    class="bg-body-tertiary navbar navbar-light"
+  >
+    <div
+      class="container-fluid"
+    >
+      <div
+        class="w-100 align-items-center row"
+      >
+        <div
+          class="col-auto"
+        >
+          <a
+            class="navbar-brand"
+            href="/"
+          >
+            Shoply
+          </a>
+        </div>
+        <div
+          class="col-auto"
+        >
+          <button
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+            class="navbar-toggler collapsed"
+            type="button"
+          >
+            <span
+              class="navbar-toggler-icon"
+            />
+          </button>
+        </div>
+        <div
+          class="flex-grow-1 col"
+        >
+          <div
+            class="SearchForm"
+          >
+            <form
+              class="search-form d-flex align-items-center"
+              role="search"
+            >
+              <div
+                class="input-group"
+              >
+                <input
+                  aria-label="Search"
+                  class="form-control"
+                  name="searchTerm"
+                  placeholder="Search..."
+                  type="text"
+                  value=""
+                />
+                <button
+                  class="input-group-text"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="svg-inline--fa fa-magnifying-glass "
+                    data-icon="magnifying-glass"
+                    data-prefix="fas"
+                    focusable="false"
+                    role="img"
+                    viewBox="0 0 512 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div
+          class="col-auto"
+        >
+          <div
+            class="ms-auto navbar-nav"
+          >
+            <a
+              class="nav-link"
+              href="#"
+              role="button"
+              tabindex="0"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-user "
+                data-icon="user"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
+                  fill="currentColor"
+                />
+              </svg>
+               testuser
+            </a>
+          </div>
+        </div>
+        <div
+          class="col-auto"
+        >
+          <div
+            class="ms-auto navbar-nav"
+          >
+            <a
+              class="nav-link"
+              data-rr-ui-event-key="/cart"
+              href="/cart"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-cart-shopping "
+                data-icon="cart-shopping"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                viewBox="0 0 576 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                  fill="currentColor"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-labelledby="offcanvasNavbarLabel"
+      class="offcanvas offcanvas-start"
+      id="offcanvasNavbar-expand"
+    >
+      <div
+        class="offcanvas-header"
+      >
+        <div
+          class="offcanvas-title h5"
+          id="offcanvasNavbarLabel-expand"
+        >
+          Shoply
+        </div>
+        <button
+          aria-label="Close"
+          class="btn-close"
+          type="button"
+        />
+      </div>
+      <div
+        class="offcanvas-body"
+      >
+        <div
+          class="me-auto navbar-nav"
+        >
+          <div
+            class="nav-item dropdown"
+          >
+            <a
+              aria-expanded="false"
+              class="dropdown-toggle nav-link"
+              href="#"
+              id="offcanvasNavbarDropdown-expand"
+              role="button"
+              tabindex="0"
+            >
+              Categories
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</DocumentFragment>
+`;

@@ -1,0 +1,60 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="Homepage"
+  >
+    <section
+      class="WelcomeBanner d-flex justify-content-center align-items-center"
+    >
+      <div
+        class="text-center "
+      >
+        <h2>
+          Welcome to Shoply !
+        </h2>
+        <p
+          class="lead"
+        >
+          Everything in one, convenient place.
+        </p>
+      </div>
+    </section>
+    <section
+      class="CategoriesBanner"
+    >
+      <div
+        class="categories-title-container"
+      >
+        <h2
+          class="categories-title"
+        >
+          Featured Categories
+        </h2>
+      </div>
+      <div
+        class="all-categories-link-container"
+      >
+        <button
+          class="btn btn-primary"
+        >
+          <a
+            class="all-categories-link"
+            href="/categories"
+          >
+            See all categories
+          </a>
+        </button>
+      </div>
+      <div
+        class="CategoriesBannerList"
+      >
+        <ul
+          class="categories-list"
+        />
+      </div>
+    </section>
+  </div>
+</DocumentFragment>
+`;
