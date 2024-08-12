@@ -60,7 +60,7 @@ export default function Navigation({ logout }) {
         </Col>
         <Col xs="auto">
           <Nav className="ms-auto">
-            <Link to="/cart">
+            <Link to="/cart" className="nav-link">
             <FontAwesomeIcon icon={faShoppingCart} />
             </Link>
           </Nav>
