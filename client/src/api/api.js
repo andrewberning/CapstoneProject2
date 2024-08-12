@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_API_URL = "http://localhost:3000";
+const BASE_API_URL = "https://shoply-backend-oo7o.onrender.com";
 
 
 class ShoplyApi {
