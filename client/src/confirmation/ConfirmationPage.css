@@ -1,0 +1,13 @@
+.ConfirmationPage {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.confirmation-container {
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.confirmation-details {
+  font-size: 1.1rem;
+}
