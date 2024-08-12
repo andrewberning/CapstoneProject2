@@ -1,0 +1,46 @@
+.CartList {
+  margin:  20px 50px;
+}
+
+.CartList .cart-title-container {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.CartList .cart-details-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.CartList .items-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: 15px;
+}
+
+.CartList .cart-items-container, .CartList .order-summary-container {
+  flex: 1;
+}
+
+.CartList .cart-items-container h2 {
+  text-align: center;
+}
+
+.CartList .order-summary-container {
+  flex: 1;
+  max-height: 300px; /* Adjust as needed */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa;
+  position: sticky;
+  top: 0; /* Keeps it fixed while scrolling */
+}
+
+.CartList .order-summary-total {
+  margin: 0;
+  font-size: 1.2rem;
+}

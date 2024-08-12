@@ -1,61 +1,76 @@
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import CartCard from './CartCard';
 import UserContext from '../auth/UserContext';
+import ShoplyApi from '../api/api';
+import "./CartList.css";
 
 export default function CartList() {
-  const { cartItems } = useContext(UserContext);
+  const { currentUser, cartItems, setCartItems, totalAmount, totalItems } = useContext(UserContext);
 
-  // Function to calculate total price
-  const calculateTotalPrice = (items) => {
-    let totalPrice = 0;
+  const handleRemove = async (itemId) => {
+    try {
+      await ShoplyApi.removeFromCart(itemId);
+      setCartItems(cartItems.filter(item => item.id !== itemId));
+    } catch (err) {
+      console.error("Error removing item from cart", err);
+    }
+  }
 
-    // Iterate through each item and sum up the prices
-    items.forEach(item => {
-      // Extract numerical value from price string (remove '$' and parse as float)
-      const price = parseFloat(item.price.replace('$', ''));
-      totalPrice += price;
-    });
-
-    // Return the total price rounded to 2 decimal places
-    return totalPrice.toFixed(2);
+  const handleQuantityChange = async (itemId, newQuantity) => {
+    try {
+      await ShoplyApi.updateCartItemQuantity(itemId, newQuantity);
+      setCartItems(cartItems.map(item => 
+        item.id === itemId ? { ...item, quantity: newQuantity } : item
+      ));
+    } catch (err) {
+      console.error("Error updating item quantity", err);
+    }
   };
 
   return (
     <div className="CartList">
-      <div className="cart-title text-center">
-        <h2>Cart</h2>
+      <div className="cart-title-container">
+        <h2>{currentUser.firstName}'s Cart</h2>
       </div>
       
-      <div className='d-flex'>
-        {cartItems.length > 0 ? (
-          <div className="cart-list-container w-50">
-            <div className="cartItemsList d-flex flex-column">
+      <div className="cart-details-container">
+        <div className='cart-items-container'>
+          <h2>Cart Items</h2>
+          {cartItems.length > 0 ? (
+            <ul className="items-list">
               {cartItems.map(item => (
                 <CartCard 
-                  key={item.product_id}
-                  id={item.product_id}
+                  key={item.id}
+                  id={item.id}
+                  productId={item.product_id}
                   name={item.name}
                   desc={item.description}
                   price={item.price}
                   img={item.image_url}
                   quantity={item.quantity}
                   categoryId={item.category_id}
+                  onRemove={handleRemove}
+                  onQuantityChange={handleQuantityChange}
                 />
               ))}
-            </div>
-          </div>
-        ) : <h2>Your cart is empty</h2>
-        }
-
-      <div className="order-summary-container">
-        <div className="order-summary-title">
-          <h4>Order Summary</h4>
+            </ul>
+          ) : <h2>Your cart is empty</h2>
+          }
         </div>
-        <div className="order-summary-total">
-          {`$${calculateTotalPrice(cartItems)}`}
+        <div className="order-summary-container">
+          <div className="order-summary-title">
+            <h4>Order Summary</h4>
+          </div>
+          <div className="order-summary-total">
+            <p>Number of items: {totalItems}</p>
+            <p>Subtotal: ${totalAmount.toFixed(2)}</p>
+          </div>
+          <Link to="/checkout" className="btn btn-primary mt-3">
+            Proceed to Checkout
+          </Link>
         </div>
       </div>
-    </div>
     </div>
   );
 }

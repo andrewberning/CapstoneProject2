@@ -1,30 +1,53 @@
 import { Link } from "react-router-dom";
-import Card from "react-bootstrap/card"
-// import Button from "react-bootstrap/Button";
+import "./CartCard.css";
 
-export default function CartCard({ id, name, desc, price, img, quantity, categoryId }) {
+export default function CartCard({ id, productId, name, desc, price, img, quantity, categoryId, onRemove, onQuantityChange }) {
 
-      // NEED TO FIND A WAY TO GET THE CATEGORY FOR LINK TO GO TO PRODUCT CARD
+  const handleQuantityChange = (evt) => {
+    const newQuantity = parseInt(evt.target.value);
+    if (newQuantity >= 1) {
+      onQuantityChange(id, newQuantity);
+    }
+  };
+
+  const handleRemoveClick = (evt) => {
+    evt.stopPropagation(); // Stop event propagation to prevent navigation
+    evt.preventDefault(); // Prevent the default link action
+    onRemove(id);
+  };
 
   return (
-    <Link className="CartCard card d-flex flex-row mx-1 align-items-center" to={`/${categoryId}/${id}`}>
-      <div className="cart-item-img">
-        <img src={img} />
-      </div>
-      <Card.Body>
-        <div className="cart-item-details">
-        <Card.Title>{name}</Card.Title>
-        <Card.Text>
-          {price}
-        </Card.Text>
-        <Card.Text>
-          {desc}
-        </Card.Text>
-        <Card.Text>
-          Qty: {quantity}
-        </Card.Text>
+    <li className="CartCard card">
+      <Link to={`/${categoryId}/${productId}`} className="item-link">
+        <div className="item-img-container">
+          <img className="card-img" src={img} alt={name} />
         </div>
-      </Card.Body>
-    </Link>
+        <div className="card-body">
+          <div className="cart-item-details">
+            <div className="card-title">{name}</div>
+            <div className="card-price">${price}</div>
+            <div className="card-description">{desc}</div>
+            <div className="card-quantity">Qty: {quantity}</div>
+          </div>
+        </div>
+      </Link>
+      
+      <div className="item-quantity-container">
+        <select 
+          id={`quantity-${id}`} 
+          value={quantity} 
+          onChange={handleQuantityChange}
+        >
+          {[...Array(10).keys()].map(i => (
+            <option key={i + 1} value={i + 1}>
+              {i + 1}
+            </option>
+          ))}
+        </select>
+      </div>
+      <button className="btn btn-danger" onClick={handleRemoveClick}>
+        Remove
+      </button>
+    </li>
   );
 }
