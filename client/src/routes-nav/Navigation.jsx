@@ -10,6 +10,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faUser } from "@fortawesome/free-solid-svg-icons";
 import "./Navigation.css";
@@ -79,9 +80,17 @@ export default function Navigation({ logout }) {
       <Offcanvas.Body>
         <Nav className="me-auto">
           <NavDropdown title="Categories" id="offcanvasNavbarDropdown-expand">
-          {categories.map(category => (
-            <NavDropdown.Item key={category.id} href={`/categories/${category.name}`}>{category.name}</NavDropdown.Item>
-          ))}
+            {categories.map(category => (
+              <NavDropdown.Item as="div" key={category.id}>
+                <Link 
+                  to={`/categories/${category.name}`} 
+                  className="dropdown-item"
+                  onClick={handleOffcanvasClose} // Close the Offcanvas on link click
+                >
+                  {category.name}
+                </Link>
+              </NavDropdown.Item>
+            ))}
           </NavDropdown>
         </Nav>
       </Offcanvas.Body>
