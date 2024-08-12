@@ -4,6 +4,7 @@ import ShoplyApi from "../api/api";
 import UserContext from "../auth/UserContext";
 import SignInModal from "../components/SignInModal";
 import "./ProductDetail.css";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 export default function ProductDetail() {
   const { id, category } = useParams();
@@ -53,7 +54,7 @@ export default function ProductDetail() {
     setShowModal(false);
   }
 
-  if (!product) return <h2>Product not found.</h2>;
+  if (!product) return <LoadingSpinner />;
 
   return (
     <div className="ProductDetail">
