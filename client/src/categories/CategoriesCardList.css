@@ -1,0 +1,44 @@
+.CategoriesCardList {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.categories-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.categories-list li {
+  flex: 1 1 calc(33.33% - 20px); /* Always 3 cards per row */
+  max-width: 300px;
+}
+
+/* 2 cards per row on smaller screens */
+@media (max-width: 1080px) {
+  .categories-list li {
+    flex: 1 1 calc(50% - 20px); 
+    max-width: 300px;
+  }
+}
+
+/* 2 cards per row on smaller screens */
+@media (max-width: 768px) {
+  .categories-list li {
+    flex: 1 1 calc(50% - 20px); 
+    max-width: calc(50% - 20px);
+  }
+}
+
+/* 1 card per row on the smallest screens */
+@media (max-width: 480px) {
+  .categories-list li {
+    flex: 1 1 100%; 
+    max-width: 100%;
+  }
+}
