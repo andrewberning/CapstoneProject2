@@ -1,5 +1,6 @@
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Nav from 'react-bootstrap/Nav';
+import { Link } from 'react-router-dom'; 
 
 const SignInOffcanvas = ({ show, handleClose }) => {
   return (
@@ -8,10 +9,10 @@ const SignInOffcanvas = ({ show, handleClose }) => {
         <Offcanvas.Title>Account</Offcanvas.Title>
       </Offcanvas.Header>
       <Offcanvas.Body>
-        <Nav className="flex-column">
-          <Nav.Link href="login">Sign In</Nav.Link>
-          <Nav.Link href="/signup">Create Account</Nav.Link>
-        </Nav>
+      <Nav className="flex-column">
+        <Link to="/login" className="nav-link">Sign In</Link>
+        <Link to="/signup" className="nav-link">Create Account</Link>
+      </Nav>
       </Offcanvas.Body>
     </Offcanvas>
   );
