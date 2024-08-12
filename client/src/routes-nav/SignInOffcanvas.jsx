@@ -10,8 +10,8 @@ const SignInOffcanvas = ({ show, handleClose }) => {
       </Offcanvas.Header>
       <Offcanvas.Body>
         <Nav className="flex-column">
-          <Link href="/login">Sign In</Link>
-          <Link href="/signup">Create Account</Link>
+          <Link to="/login">Sign In</Link>
+          <Link to="/signup">Create Account</Link>
         </Nav>
       </Offcanvas.Body>
     </Offcanvas>
