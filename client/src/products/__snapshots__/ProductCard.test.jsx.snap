@@ -1,0 +1,106 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ProductCard component > matches snapshot 1`] = `
+<DocumentFragment>
+  <li
+    class="ProductCard"
+  >
+    <a
+      class="product-link card"
+      href="/undefined/undefined"
+    >
+      <div
+        class="product-img-container"
+      >
+        <img
+          class="card-img"
+        />
+      </div>
+      <div
+        class="card-body"
+      >
+        <div
+          class="product-item-details"
+        >
+          <div
+            class="card-title"
+          />
+          <div
+            class="card-price"
+          >
+            $
+          </div>
+        </div>
+      </div>
+    </a>
+    <div
+      class="quantity-selector"
+    >
+      <label
+        for="quantity-undefined"
+      >
+        Quantity: 
+      </label>
+      <select
+        id="quantity-undefined"
+      >
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="2"
+        >
+          2
+        </option>
+        <option
+          value="3"
+        >
+          3
+        </option>
+        <option
+          value="4"
+        >
+          4
+        </option>
+        <option
+          value="5"
+        >
+          5
+        </option>
+        <option
+          value="6"
+        >
+          6
+        </option>
+        <option
+          value="7"
+        >
+          7
+        </option>
+        <option
+          value="8"
+        >
+          8
+        </option>
+        <option
+          value="9"
+        >
+          9
+        </option>
+        <option
+          value="10"
+        >
+          10
+        </option>
+      </select>
+    </div>
+    <button
+      class="btn btn-primary mt-2"
+    >
+      Add to cart
+    </button>
+  </li>
+</DocumentFragment>
+`;
