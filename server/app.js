@@ -4,6 +4,7 @@
 require('dotenv').config();
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 const paypal = require('./services/paypal');
 
 const { NotFoundError } = require("./expressError");
@@ -29,7 +30,15 @@ app.use("/users", usersRoutes);
 app.use("/cart", cartRoutes);
 app.use("/orders", orderRoutes);
 
-/** Handle 404 errors -- this matches everything */
+// Serve static files from the React app's build directory
+app.use(express.static(path.join(__dirname, 'build')));
+
+// Catch-all route: If no API routes match, send back React's index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+// Handle 404 errors -- this matches everything
 app.use(function (req, res, next) {
   return next(new NotFoundError());
 });
