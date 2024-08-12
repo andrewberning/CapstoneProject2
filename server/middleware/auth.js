@@ -28,5 +28,24 @@ function authenticateJWT(req, res, next) {
   }
 }
 
+/** Middleware to use when they must be logged in.
+ *
+ * If not, raises Unauthorized.
+ */
 
-module.exports = authenticateJWT
+function ensureLoggedIn(req, res, next) {
+  try {
+    console.log(res.locals.user);
+    
+    if (!res.locals.user) throw new UnauthorizedError();
+    return next();
+  } catch (err) {
+    return next(err);
+  }
+}
+
+
+module.exports = {
+  authenticateJWT,
+  ensureLoggedIn
+};

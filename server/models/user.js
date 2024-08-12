@@ -120,7 +120,8 @@ class User {
     user.cartId = cart.id;
 
     const userCartItemsRes = await db.query(
-      `SELECT ci.product_id,
+      `SELECT ci.id,
+              ci.product_id,
               ci.quantity,
               p.name,
               p.description,

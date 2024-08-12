@@ -32,7 +32,6 @@ CREATE TABLE products (
 CREATE TABLE carts (
   id SERIAL PRIMARY KEY,
   user_id INTEGER REFERENCES users(id),
-  guest_id UUID,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -49,9 +48,15 @@ CREATE TABLE cart_items (
 CREATE TABLE orders (
     id SERIAL PRIMARY KEY,
     user_id INTEGER REFERENCES users(id),
-    guest_id UUID,
-    total_price NUMERIC(10, 2) NOT NULL,
-    status VARCHAR(50) DEFAULT 'Pending',
+    name VARCHAR(255),
+    total_items INTEGER NOT NULL,
+    total_amount NUMERIC(10, 2) NOT NULL,
+    status VARCHAR(50) DEFAULT 'pending',
+    address VARCHAR(255),
+    city VARCHAR(255),
+    state VARCHAR(255),
+    zip VARCHAR(255),
+    country VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

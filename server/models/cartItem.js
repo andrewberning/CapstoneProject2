@@ -14,7 +14,6 @@ class CartItem {
     );
     
     const cartItem = result.rows[0];
-    console.log(`New cartItem added.`);
     return cartItem;
   }
 
@@ -61,6 +60,22 @@ class CartItem {
     
     return cartItem;
   }
+
+  // Remove all items from the cart
+  static async removeAllItems(cartId) {
+    const result = await db.query(
+      `DELETE FROM cart_items
+       WHERE cart_id = $1
+       RETURNING id`,
+      [cartId]
+    );
+
+    if (result.rows.length === 0) {
+      throw new BadRequestError(`No cart items found with cartId: ${cartId}`);
+    }
+  
+    return result.rows;
+  };
 }
 
 module.exports = CartItem;

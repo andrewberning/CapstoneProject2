@@ -4,8 +4,8 @@ const db = require("../config/db");
 const { NotFoundError } = require("../expressError")
 
 class Product {
-  /** All: all categories */
 
+  /** Get all products by category id */
   static async getAllProductsByCategoryId(id) {
     const results = await db.query(
       `SELECT id, name, description, price, image_url, stock, category_id
@@ -14,17 +14,37 @@ class Product {
     return results.rows;
   }
 
+  /**Get a product by its id */
   static async getProduct(id) {
     const result = await db.query(
       `SELECT id, name, description, price, image_url, stock, category_id
        FROM products
        WHERE id = $1`, [id]
     );
-
-    if(!result.rows[0]) throw new NotFoundError(`Category Not Found: ${category}`, 404);
-
+  
+    if (!result || !result.rows || result.rows.length === 0) {
+      throw new NotFoundError('Product Not Found', 404);
+    }
+  
     return result.rows[0];
   }
+
+  /** Search for products by a search term */
+  static async find(searchTerm) {
+    const result = await db.query(
+      `SELECT id, name, description, price, image_url, stock, category_id
+       FROM products
+       WHERE name ILIKE $1`,
+      [`%${searchTerm}%`]
+    );
+  
+    if (!result || !result.rows || result.rows.length === 0) {
+      throw new NotFoundError('Product Not Found', 404);
+    }
+  
+    return result.rows;
+  }
+
 }
 
 module.exports = Product;

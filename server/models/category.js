@@ -20,11 +20,13 @@ class Category {
        FROM categories
        WHERE name = $1`, [category]
     );
-
-    if(!result.rows[0]) throw new NotFoundError(`Category Not Found: ${category}`, 404);
-
+  
+    if (!result || !result.rows || result.rows.length === 0) {
+      throw new NotFoundError(`Category Not Found: ${category}`, 404);
+    }
+  
     return result.rows[0];
-  }
+  }  
 }
 
 module.exports = Category;

@@ -4,31 +4,16 @@
 
 const express = require("express");
 const router = new express.Router();
-const db = require("../config/db");
-const Product = require("../models/product");
+const productController = require('../controllers/productController');
 
-/** GET / =>
- * {products: [{ id, name, description, price, image_url, stock, category_id }, ...] }
- */ 
-router.get("/:id", async (req, res, next) => {
-  try {
-    let categoryId = req.params.id;
-    let products = await Product.getAllProductsByCategoryId(categoryId);
-    return res.json({products});
-  } catch(err) {
-    return next(err);
-  }
-});
+// GET /products/search
+router.get('/search', productController.searchProducts);
 
-router.get("/product/:id", async (req, res, next) => {
-  try {
-    let product = await Product.getProduct(req.params.id);
-    return res.json({product});
-  } catch(err) {
-    return next(err);
-  }
-})
+// GET /products/:id 
+router.get('/:id', productController.getAllProducts);
 
+// GET /products/product/:id
+router.get('/product/:id', productController.getProduct);
 
 
 module.exports = router;

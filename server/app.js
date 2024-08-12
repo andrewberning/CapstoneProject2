@@ -1,18 +1,20 @@
 "use strict";
 
 /** Express app for shoply */
-
+require('dotenv').config();
 const express = require("express");
 const cors = require("cors");
+const paypal = require('./services/paypal');
 
 const { NotFoundError } = require("./expressError");
 
-const authenticateJWT = require("./middleware/auth");
+const { authenticateJWT } = require("./middleware/auth");
 const authRoutes = require("./routes/auth");
 const categoriesRoutes = require("./routes/categories");
 const productsRoutes = require("./routes/products");
 const usersRoutes = require("./routes/users");
 const cartRoutes = require("./routes/cart");
+const orderRoutes = require("./routes/orders");
 
 const app = express();
 
@@ -25,6 +27,7 @@ app.use("/categories", categoriesRoutes);
 app.use("/products", productsRoutes);
 app.use("/users", usersRoutes);
 app.use("/cart", cartRoutes);
+app.use("/orders", orderRoutes);
 
 /** Handle 404 errors -- this matches everything */
 app.use(function (req, res, next) {
