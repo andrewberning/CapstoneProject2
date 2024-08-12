@@ -6,7 +6,7 @@ import ShoplyApi from "../api/api";
 import "./Checkout.css";
 
 export default function Checkout() {
-  const { cartItems, currentUser, totalAmount, totalItems } = useContext(UserContext);
+  const { cartItems, setCartItems, currentUser, totalAmount, totalItems } = useContext(UserContext);
   const navigate = useNavigate();
   const [message, setMessage] = useState("");
 
@@ -85,6 +85,7 @@ export default function Checkout() {
 
         // delete items from cart in database
         await ShoplyApi.removeAllItemsFromCart(currentUser.cartId)
+        setCartItems([]);
         
         // navigate to order confirmation page
         navigate('/order-confirmation');
