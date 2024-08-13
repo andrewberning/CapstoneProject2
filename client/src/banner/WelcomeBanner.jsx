@@ -9,7 +9,7 @@ export default function WelcomeBanner() {
     <section className="WelcomeBanner d-flex justify-content-center align-items-center">
       <div className="text-center ">
         {currentUser
-          ? <h2>Welcome to Shoply {currentUser.firstName}!</h2>
+          ? <h2>Welcome to Shoply, {currentUser.firstName}!</h2>
           : <h2>Welcome to Shoply</h2>
         }
         <p className="lead">Everything in one, convenient place.</p>
