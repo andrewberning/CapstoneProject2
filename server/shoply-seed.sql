@@ -30,7 +30,7 @@ VALUES
 ('Sweater', 'Cozy wool sweater.', 25.99, 'https://i.etsystatic.com/10777022/c/2400/2400/60/0/il/4a0fba/5519731481/il_300x300.5519731481_du1i.jpg', 70, 3),
 ('Red Apple', 'Crisp red apple.', 0.59, 'https://m.media-amazon.com/images/S/assets.wholefoodsmarket.com/PIE/product/56e808d8f6e8791100e80028_365_-red-delicious-apple.2.jpg', 22, 4),
 ('Organic Banana', 'Sweet organic banana.', 0.99, 'https://i5.walmartimages.com/seo/Fresh-Banana-Fruit-Each_5939a6fa-a0d6-431c-88c6-b4f21608e4be.f7cd0cc487761d74c69b7731493c1581.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF', 34, 4),
-('Yello Onion', 'Yellow onion.', .49, 'https://upload.wikimedia.org/wikipedia/commons/2/25/Onion_on_White.JPG', 62, 4),
+('Yellow Onion', 'Yellow onion.', .49, 'https://upload.wikimedia.org/wikipedia/commons/2/25/Onion_on_White.JPG', 62, 4),
 ('Futon', 'A great futon.', 199.99, 'https://assets.weimgs.com/weimgs/ab/images/wcm//products/202425/0064/jannick-full-futon-sleeper-85-fwh.jpg', 31, 5),
 ('Bed Mattress', 'Comfortable bed matress.', 399.49, 'https://mobileimages.lowes.com/productimages/ff366373-6469-4e78-9954-301435fa9489/42617831.jpg', 58, 5),
 ('Couch', 'Stylish couch.', 299.49, 'https://www.ikea.com/us/en/images/products/paerup-sofa-vissle-gray__1041907_pe841187_s5.jpg', 37, 5),
