@@ -75,23 +75,33 @@ export default function Navigation({ logout }) {
       placement="start"
     >
       <Offcanvas.Header closeButton>
-        <Offcanvas.Title id="offcanvasNavbarLabel-expand">Shoply</Offcanvas.Title>
+        <Offcanvas.Title id="offcanvasNavbarLabel-expand">
+          <Link to={"/"} className="nav-link" onClick={handleOffcanvasClose}>
+            Shoply
+          </Link>
+        </Offcanvas.Title>
       </Offcanvas.Header>
       <Offcanvas.Body>
-        <Nav className="me-auto">
-          <NavDropdown title="Categories" id="offcanvasNavbarDropdown-expand">
-            {categories.map(category => (
-              <NavDropdown.Item as="div" key={category.id}>
-                <Link 
-                  to={`/categories/${category.name}`} 
-                  className="dropdown-item"
-                  onClick={handleOffcanvasClose} // Close the Offcanvas on link click
-                >
-                  {category.name}
-                </Link>
-              </NavDropdown.Item>
-            ))}
-          </NavDropdown>
+        <Nav className="me-auto flex-column">
+          {/* Link to the categories list page */}
+          <Nav.Link as="div">
+            <Link to="/categories" className="nav-link" onClick={handleOffcanvasClose}>
+              Categories
+            </Link>
+          </Nav.Link>
+
+          {/* List all categories as links */}
+          {categories.map((category) => (
+            <Nav.Link as="div" key={category.id}>
+              <Link 
+                to={`/categories/${category.name}`} 
+                className="nav-link ms-3"
+                onClick={handleOffcanvasClose}
+              >
+                {category.name}
+              </Link>
+            </Nav.Link>
+          ))}
         </Nav>
       </Offcanvas.Body>
     </Navbar.Offcanvas>
