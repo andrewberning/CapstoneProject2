@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CartCard from './CartCard';
 import UserContext from '../auth/UserContext';
@@ -6,7 +6,18 @@ import ShoplyApi from '../api/api';
 import "./CartList.css";
 
 export default function CartList() {
-  const { currentUser, cartItems, setCartItems, totalAmount, totalItems } = useContext(UserContext);
+  const { currentUser, totalAmount, totalItems } = useContext(UserContext);
+
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const cartData = await ShoplyApi.getCartItems(currentUser.cartId);
+      setCartItems(cartData);
+    }
+
+    fetchData();
+  }, [])
 
   const handleRemove = async (itemId) => {
     try {
