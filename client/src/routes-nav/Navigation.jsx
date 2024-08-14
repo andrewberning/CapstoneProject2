@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import UserContext from "../auth/UserContext";
 import SignInOffcanvas from "./SignInOffcanvas";
 import LogOutOffcanvas from "./LogOutOffcanvas";
@@ -6,7 +6,6 @@ import SearchForm from "../components/SearchForm";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -16,10 +15,11 @@ import { faShoppingCart, faUser } from "@fortawesome/free-solid-svg-icons";
 import "./Navigation.css";
 
 export default function Navigation({ logout }) {
-  const { currentUser, categories} = useContext(UserContext);
+  const { currentUser, categories, cartItems, totalItems, setTotalItems } = useContext(UserContext);
   const [showOffcanvas, setShowOffcanvas] = useState(false);
   const [showSignIn, setShowSignIn] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
+  // const [cartCount, setCartCount] = useState(0);
 
   const handleOffcanvasClose = () => setShowOffcanvas(false);
   const handleOffcanvasShow = () => setShowOffcanvas(true);
@@ -34,6 +34,11 @@ export default function Navigation({ logout }) {
     logout();
     handleUserMenuClose();
   }
+
+  useEffect(() => {
+    const itemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+    setTotalItems(itemCount);
+  }, []);
 
   return (
     <Navbar expand={false} className="bg-body-tertiary">
@@ -60,8 +65,13 @@ export default function Navigation({ logout }) {
         </Col>
         <Col xs="auto">
           <Nav className="ms-auto">
-            <Link to="/cart" className="nav-link">
+            <Link to="/cart" className="nav-link position-relative">
             <FontAwesomeIcon icon={faShoppingCart} />
+            {totalItems > 0 && (
+              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                {totalItems}
+              </span>
+            )}
             </Link>
           </Nav>
         </Col>
