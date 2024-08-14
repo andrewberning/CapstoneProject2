@@ -127,7 +127,7 @@ export const UserProvider = ({ children }) => {
 
   return (
     <UserContext.Provider
-      value={{ currentUser, setCurrentUser, addToCart, hasAddedToCart, cartItems, setCartItems, removeFromCart, categories, logout, signup, login, infoLoaded, totalAmount, totalItems }}>
+      value={{ currentUser, setCurrentUser, addToCart, hasAddedToCart, cartItems, setCartItems, removeFromCart, categories, logout, signup, login, infoLoaded, totalAmount, totalItems, setTotalItems }}>
       {children}
     </UserContext.Provider>
   );
