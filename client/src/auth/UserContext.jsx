@@ -67,6 +67,16 @@ export const UserProvider = ({ children }) => {
     setTotalItems(newTotalItems);
   }, [cartItems]);
 
+  // Function to remove an item from cart
+  const removeFromCart = async (itemId) => {
+    try {
+      await ShoplyApi.removeFromCart(itemId);
+      setCartItems(cartItems.filter(item => item.id !== itemId));
+    } catch (err) {
+      console.error("Error removing item from cart", err);
+    }
+  }
+
   useEffect(() => {
     calculateTotalPrice();
     calculateTotalItems();
@@ -117,7 +127,7 @@ export const UserProvider = ({ children }) => {
 
   return (
     <UserContext.Provider
-      value={{ currentUser, setCurrentUser, addToCart, hasAddedToCart, cartItems, setCartItems, categories, logout, signup, login, infoLoaded, totalAmount, totalItems }}>
+      value={{ currentUser, setCurrentUser, addToCart, hasAddedToCart, cartItems, setCartItems, removeFromCart, categories, logout, signup, login, infoLoaded, totalAmount, totalItems }}>
       {children}
     </UserContext.Provider>
   );
