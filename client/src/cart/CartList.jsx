@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import CartCard from './CartCard';
 import UserContext from '../auth/UserContext';
@@ -6,9 +6,7 @@ import ShoplyApi from '../api/api';
 import "./CartList.css";
 
 export default function CartList() {
-  const { currentUser, totalAmount, totalItems } = useContext(UserContext);
-
-  const [cartItems, setCartItems] = useState([]);
+  const { currentUser, cartItems, setCartItems, totalAmount, totalItems, removeFromCart } = useContext(UserContext);
 
   useEffect(() => {
     async function fetchData() {
@@ -18,15 +16,6 @@ export default function CartList() {
 
     fetchData();
   }, [])
-
-  const handleRemove = async (itemId) => {
-    try {
-      await ShoplyApi.removeFromCart(itemId);
-      setCartItems(cartItems.filter(item => item.id !== itemId));
-    } catch (err) {
-      console.error("Error removing item from cart", err);
-    }
-  }
 
   const handleQuantityChange = async (itemId, newQuantity) => {
     try {
@@ -61,7 +50,7 @@ export default function CartList() {
                   img={item.image_url}
                   quantity={item.quantity}
                   categoryId={item.category_id}
-                  onRemove={handleRemove}
+                  onRemove={removeFromCart}
                   onQuantityChange={handleQuantityChange}
                 />
               ))}
