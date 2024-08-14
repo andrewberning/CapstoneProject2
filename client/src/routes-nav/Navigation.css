@@ -1,3 +1,6 @@
+.navbar {
+  margin-bottom: 50px;
+}
 
 .navbar-brand:hover, .nav-link:hover {
   text-decoration: underline;
