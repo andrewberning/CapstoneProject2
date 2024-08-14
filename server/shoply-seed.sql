@@ -32,7 +32,7 @@ VALUES
 ('Organic Banana', 'Sweet organic banana.', 0.99, 'https://i5.walmartimages.com/seo/Fresh-Banana-Fruit-Each_5939a6fa-a0d6-431c-88c6-b4f21608e4be.f7cd0cc487761d74c69b7731493c1581.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF', 34, 4),
 ('Yellow Onion', 'Yellow onion.', .49, 'https://upload.wikimedia.org/wikipedia/commons/2/25/Onion_on_White.JPG', 62, 4),
 ('Futon', 'A great futon.', 199.99, 'https://assets.weimgs.com/weimgs/ab/images/wcm//products/202425/0064/jannick-full-futon-sleeper-85-fwh.jpg', 31, 5),
-('Bed Mattress', 'Comfortable bed matress.', 399.49, 'https://mobileimages.lowes.com/productimages/ff366373-6469-4e78-9954-301435fa9489/42617831.jpg', 58, 5),
+('Bed Mattress', 'Comfortable bed mattress.', 399.49, 'https://mobileimages.lowes.com/productimages/ff366373-6469-4e78-9954-301435fa9489/42617831.jpg', 58, 5),
 ('Couch', 'Stylish couch.', 299.49, 'https://www.ikea.com/us/en/images/products/paerup-sofa-vissle-gray__1041907_pe841187_s5.jpg', 37, 5),
 ('Baseball Bat', 'Wooden baseball bat.', 59.99, 'https://cdn.shopify.com/s/files/1/0390/8909/products/K-3_Clear-733328_400x400.jpg?v=1702413280', 29, 6),
 ('Football', 'Leather football.', 29.99, 'https://t4.ftcdn.net/jpg/00/96/13/71/360_F_96137109_ojPuIAl4e3LqslKAMxJ5CgmbqOQeCcHr.jpg', 32, 6),
