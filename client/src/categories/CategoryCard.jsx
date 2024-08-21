@@ -4,9 +4,9 @@ import "./CategoryCard.css";
 export default function CategoryCard({ category, image }) {
   return (
     <li className="CategoryCard">
-      <Link className="category-link card flex-column" to={`/categories/${category}`}>
+      <Link className="category-link card" to={`/categories/${category}`}>
         <div className="category-img-container">
-          <img src={image} className="card-img" />
+          <img src={image} alt={category} className="card-img" />
         </div>
         <div className="card-body">
           <div className="card-title text-center">{category}</div>

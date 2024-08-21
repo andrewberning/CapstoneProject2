@@ -5,7 +5,7 @@ export default function CategoriesList() {
 
   return (
     <div className="CategoriesList">
-      <h2 className="title">Categories</h2>
+      <h2 className="title">CATEGORIES</h2>
       <CategoriesCardList />
     </div>
   )

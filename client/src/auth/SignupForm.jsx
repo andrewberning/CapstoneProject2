@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Alert from "../components/Alert";
 import UserContext from "./UserContext";
+import "./SignupForm.css";
 
 export default function SignupForm() {
   const navigate = useNavigate();
@@ -39,7 +40,7 @@ export default function SignupForm() {
   return (
     <div className="SignupForm">
       <div className="container col-md-6 offset-md-3 col-lg-4 offset-lg-4">
-        <h2 className="mb-3">Sign Up</h2>
+        <h2 className="mb-3">SIGN UP</h2>
         <div className="card">
           <div className="card-body">
             <form onSubmit={handleSubmit}>
@@ -101,7 +102,7 @@ export default function SignupForm() {
                   : null
               }
 
-              <button className="btn btn-primary float-right">
+              <button className="btn">
                 Submit
               </button>
 

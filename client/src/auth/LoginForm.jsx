@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Alert from "../components/Alert";
 import UserContext from "./UserContext";
+import "./LoginForm.css";
 
 export default function LoginForm() {
   const navigate = useNavigate();
@@ -11,11 +12,6 @@ export default function LoginForm() {
     password: "",
   });
   const [formErrors, setFormErrors] = useState([]);
-
-  /** Handle form submit:
-   *
-   * Calls login func prop and, if successful, redirect to /companies.
-   */
 
   async function handleSubmit(evt) {
     evt.preventDefault();
@@ -36,7 +32,7 @@ export default function LoginForm() {
   return (
     <div className="LoginForm">
       <div className="container col-md-6 offset-md-3 col-lg-4 offset-lg-4">
-        <h3 className="mb-3">Log In</h3>
+        <h2 className="text-center">LOG IN</h2>
 
         <div className="card">
           <div className="card-body">
@@ -71,12 +67,7 @@ export default function LoginForm() {
                   ? <Alert type="danger" messages={formErrors} />
                   : null}
 
-              <button
-                  className="btn btn-primary float-right"
-                  type="submit"
-              >
-                Submit
-              </button>
+              <button className="btn" type="submit">Submit</button>
             </form>
           </div>
         </div>

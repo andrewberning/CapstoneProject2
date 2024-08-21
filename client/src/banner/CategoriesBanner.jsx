@@ -7,10 +7,10 @@ export default function CategoriesBanner() {
   return (
     <section className="CategoriesBanner">
         <div className="categories-title-container">
-          <h2 className="categories-title">Featured Categories</h2>
+          <h2 className="categories-title">FEATURED CATEGORIES</h2>
         </div>
         <div className="all-categories-link-container">
-          <button className='btn btn-primary'>
+          <button className='btn'>
           <Link to={"/categories"} className="all-categories-link">See all categories</Link>
           </button>
         </div>

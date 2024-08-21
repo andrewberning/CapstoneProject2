@@ -6,11 +6,11 @@ export default function WelcomeBanner() {
   const { currentUser } = useContext(UserContext);
 
   return (
-    <section className="WelcomeBanner d-flex justify-content-center align-items-center">
-      <div className="text-center ">
+    <section className="WelcomeBanner">
+      <div className="banner-container">
         {currentUser
-          ? <h2>Welcome to Shoply, {currentUser.firstName}!</h2>
-          : <h2>Welcome to Shoply</h2>
+          ? <h1 className="title">WELCOME TO SHOPLY, {currentUser.firstName.toUpperCase()}!</h1>
+          : <h1 className="title">WELCOME TO SHOPLY</h1>
         }
         <p className="lead">Everything in one, convenient place.</p>
       </div>

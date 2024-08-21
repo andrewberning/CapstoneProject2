@@ -14,12 +14,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faUser } from "@fortawesome/free-solid-svg-icons";
 import "./Navigation.css";
 
-export default function Navigation({ logout }) {
-  const { currentUser, categories, cartItems, totalItems, setTotalItems } = useContext(UserContext);
+export default function Navigation() {
+  const { currentUser, categories, cartItems, totalItems, setTotalItems, logout } = useContext(UserContext);
   const [showOffcanvas, setShowOffcanvas] = useState(false);
   const [showSignIn, setShowSignIn] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
-  // const [cartCount, setCartCount] = useState(0);
 
   const handleOffcanvasClose = () => setShowOffcanvas(false);
   const handleOffcanvasShow = () => setShowOffcanvas(true);
@@ -38,10 +37,10 @@ export default function Navigation({ logout }) {
   useEffect(() => {
     const itemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
     setTotalItems(itemCount);
-  }, []);
+  }, [cartItems, setTotalItems]);
 
   return (
-    <Navbar expand={false} className="bg-body-tertiary">
+    <Navbar expand={false} >
     <Container fluid>
       <Row className="w-100 align-items-center">
         <Col xs="auto">
@@ -56,19 +55,19 @@ export default function Navigation({ logout }) {
         <Col xs="auto">
           <Nav className="ms-auto">
             {currentUser 
-             ? <Nav.Link href="" onClick={handleUserMenuShow}>
+             ? <Nav.Link id="user-link" href="" onClick={handleUserMenuShow}>
                <FontAwesomeIcon icon={faUser} /> {currentUser.username}
                </Nav.Link>
-             : <Nav.Link href="" onClick={handleSignInShow}>Sign In</Nav.Link>
+             : <Nav.Link id="user-link" href="" onClick={handleSignInShow}>Sign In</Nav.Link>
             }
           </Nav>
         </Col>
-        <Col xs="auto">
+        <Col className="cart-nav" xs="auto">
           <Nav className="ms-auto">
-            <Link to="/cart" className="nav-link position-relative">
+            <Link to="/cart" id="cart-link" className="nav-link position-relative">
             <FontAwesomeIcon icon={faShoppingCart} />
             {totalItems > 0 && (
-              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              <span id="cart-badge" className="position-absolute top-0 start-100 translate-middle badge rounded-pill">
                 {totalItems}
               </span>
             )}
