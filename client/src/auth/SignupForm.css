@@ -1,0 +1,20 @@
+.SignupForm {
+  margin-top: 50px;
+}
+
+.SignupForm h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.SignupForm .btn {
+  color: var(--light-clr);
+  background-color: var(--secondary-accent-clr);
+  border-color: black;
+}
+
+.SignupForm .btn:hover {
+  background-color: var(--primary-accent-clr);
+  border-color: black;
+  color: var(--light-clr);
+}

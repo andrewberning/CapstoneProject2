@@ -1,0 +1,20 @@
+.LoginForm {
+  margin-top: 50px;
+}
+
+.LoginForm h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.LoginForm .btn {
+  background-color: var(--secondary-accent-clr);
+  border-color: black;
+  color: var(--light-clr);
+}
+
+.LoginForm .btn:hover {
+  background-color: var(--primary-accent-clr);
+  border-color: black;
+  color: var(--light-clr);
+}
