@@ -1,18 +1,12 @@
 .CategoriesBannerList {
-  padding: 20px;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-inline: 50px;
 }
 
 .CategoriesBannerList .categories-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px; 
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .CategoriesBannerList .categories-list li {

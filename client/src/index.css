@@ -1,3 +1,24 @@
-* {    
-  box-sizing: border-box !important;
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-primary: "Playfair Display";
+  --ff-secondary: "Hammersmith One";
+
+  --primary-clr: #b29e84;
+  --secondary-clr: #253439;
+  --primary-accent-clr: #0b9bb2;
+  --secondary-accent-clr: #595551;
+  --light-clr: #f6f4f1;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+  font-family: var(--ff-secondary);
+}
+
+p, span {
+  margin: 0;
+  font-family: var(--ff-primary);
 }

@@ -1,0 +1,24 @@
+/* Ensure root elements fill the full height */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* App component's main wrapper */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main content should take up the remaining space */
+.App > .content {
+  flex: 1;
+  background-color: var(--light-clr);
+}
+
+/* Footer should remain at the bottom */
+footer {
+  flex-shrink: 0;
+}

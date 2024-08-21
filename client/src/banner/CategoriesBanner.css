@@ -1,21 +1,24 @@
 .CategoriesBanner {
-  background-color: salmon;
+  background-color: var(--primary-clr);
   text-align: center;
-}
-
-.categories-title-container {
-  padding-top: 20px;
+  color: var(--light-clr);
+  padding-block: 50px;
 }
 
 .categories-title-container h2 {
-  margin: 0;
+  letter-spacing: 5px;
 }
 
-.all-categories-link-container {
-  padding: 20px;
+.all-categories-link-container button {
+  background-color: var(--secondary-accent-clr);
+}
+
+.all-categories-link-container button:hover {
+  background-color: var(--primary-accent-clr);
 }
 
 .all-categories-link-container a {
   text-decoration: none;
   color: white;
+  font-family: var(--ff-primary);
 }

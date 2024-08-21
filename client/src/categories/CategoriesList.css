@@ -1,5 +1,7 @@
-.CategoriesList h2 {
-  text-align: center;
-  margin: 20px;
+.CategoriesList {
+  margin-top: 50px;
 }
 
+.CategoriesList .title {
+  text-align: center;
+}

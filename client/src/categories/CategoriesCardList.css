@@ -1,44 +1,40 @@
 .CategoriesCardList {
-  padding: 20px;
-  background-color: #f8f9fa;
-  border-radius: 8px;
+  margin-inline: 50px;
 }
 
-.categories-list {
+.CategoriesCardList .categories-list {
+  text-decoration: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  justify-content: space-evenly;
+  
 }
 
-.categories-list li {
-  flex: 1 1 calc(33.33% - 20px); /* Always 3 cards per row */
+/* .CategoriesCardList .categories-list li {
+  flex: 1 1 calc(33.33% - 20px); 
   max-width: 300px;
-}
+} */
 
 /* 2 cards per row on smaller screens */
-@media (max-width: 1080px) {
-  .categories-list li {
+/* @media (max-width: 1080px) {
+  .CategoriesCardList .categories-list li {
     flex: 1 1 calc(50% - 20px); 
     max-width: 300px;
   }
-}
+} */
 
 /* 2 cards per row on smaller screens */
-@media (max-width: 768px) {
-  .categories-list li {
+/* @media (max-width: 768px) {
+  .CategoriesCardList .categories-list li {
     flex: 1 1 calc(50% - 20px); 
     max-width: calc(50% - 20px);
   }
-}
+} */
 
 /* 1 card per row on the smallest screens */
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .categories-list li {
     flex: 1 1 100%; 
     max-width: 100%;
   }
-}
+} */
