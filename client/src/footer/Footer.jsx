@@ -6,7 +6,7 @@ export default function Footer() {
     <div className="Footer">
       <footer className="footer-container">
         <p>SHOPLY</p>
-        <span>Copywrite 2024. A. Berning</span>
+        <span>Copyright 2024. A. Berning</span>
       </footer>
     </div>
   );
