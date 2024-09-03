@@ -16,11 +16,6 @@ export default function SignupForm() {
   });
   const [formErrors, setFormErrors] = useState([]);
 
-  /** Handle form submit:
-   * 
-   * Calls login func prop and, if successful, navigate to /companies.
-   */
-
   async function handleSubmit(evt) {
     evt.preventDefault();
     let result = await signup(formData);
@@ -102,7 +97,7 @@ export default function SignupForm() {
                   : null
               }
 
-              <button className="btn">
+              <button className="btn mt-3">
                 Submit
               </button>
 

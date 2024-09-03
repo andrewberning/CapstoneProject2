@@ -10,7 +10,7 @@ export default function CategoriesBanner() {
           <h2 className="categories-title">FEATURED CATEGORIES</h2>
         </div>
         <div className="all-categories-link-container">
-          <button className='btn'>
+          <button className='btn mt-3'>
           <Link to={"/categories"} className="all-categories-link">See all categories</Link>
           </button>
         </div>

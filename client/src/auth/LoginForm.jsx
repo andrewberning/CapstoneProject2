@@ -67,7 +67,7 @@ export default function LoginForm() {
                   ? <Alert type="danger" messages={formErrors} />
                   : null}
 
-              <button className="btn" type="submit">Submit</button>
+              <button className="btn mt-3" type="submit">Submit</button>
             </form>
           </div>
         </div>
