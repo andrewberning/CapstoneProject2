@@ -3,7 +3,7 @@ import "./ConfirmationPage.css";
 
 export default function ConfirmationPage() {
   return (
-    <div className="ConfirmationPage container">
+    <div className="ConfirmationPage">
       <h2 className="text-center my-4">Confirmation Page</h2>
       <div className="confirmation-container card p-4 shadow-sm">
         <div className="confirmation-details">
@@ -11,7 +11,7 @@ export default function ConfirmationPage() {
           <p className="mb-4">Thanks for Shopping with us at Shoply!</p>
         </div>
         <div className="btn-container">
-          <Link to={"/"} className="btn btn-primary">Home</Link>
+          <Link to={"/"} className="btn">Home</Link>
         </div>
       </div>
     </div>

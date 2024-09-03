@@ -11,3 +11,14 @@
 .confirmation-details {
   font-size: 1.1rem;
 }
+
+.btn-container a {
+  background-color: var(--secondary-accent-clr);
+  text-decoration: none;
+  color: white;
+  font-family: var(--ff-primary);
+}
+
+.btn-container a:hover {
+  background-color: var(--primary-accent-clr);
+}

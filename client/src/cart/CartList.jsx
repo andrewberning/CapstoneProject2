@@ -66,7 +66,7 @@ export default function CartList() {
             <p>Number of items: {totalItems}</p>
             <p>Subtotal: ${totalAmount.toFixed(2)}</p>
           </div>
-          <Link to="/checkout" className="btn btn-primary mt-3">
+          <Link to="/checkout" className="btn">
             Proceed to Checkout
           </Link>
         </div>

@@ -33,6 +33,7 @@ export default function CartCard({ id, productId, name, desc, price, img, quanti
       </Link>
       
       <div className="item-quantity-container">
+        <label htmlFor={`quantity-${id}`}>Edit Quantity:</label>
         <select 
           id={`quantity-${id}`} 
           value={quantity} 
@@ -45,7 +46,7 @@ export default function CartCard({ id, productId, name, desc, price, img, quanti
           ))}
         </select>
       </div>
-      <button className="btn btn-danger" onClick={handleRemoveClick}>
+      <button className="btn btn-danger mt-3" onClick={handleRemoveClick}>
         Remove
       </button>
     </li>

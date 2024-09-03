@@ -80,7 +80,7 @@ export default function ProductDetail() {
           <div className="add-to-cart-container">
           {!added && (
             <div className="quantity-selector">
-              <label htmlFor={`quantity-${id}`}>Quantity: </label>
+              <label htmlFor={`quantity-${id}`}>Quantity:</label>
               <select 
                 id={`quantity-${id}`} 
                 value={quantity} 
@@ -97,7 +97,7 @@ export default function ProductDetail() {
         
 
           <button 
-            className="btn btn-primary"
+            className="btn"
             onClick={handleAddToCart} 
             disabled={added}
           >

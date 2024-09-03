@@ -31,16 +31,40 @@
 
 .CartList .order-summary-container {
   flex: 1;
-  max-height: 300px; /* Adjust as needed */
+  max-height: 300px;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: #f8f9fa;
   position: sticky;
-  top: 0; /* Keeps it fixed while scrolling */
+  top: 0; 
 }
 
 .CartList .order-summary-total {
   margin: 0;
   font-size: 1.2rem;
+}
+
+.CartList .order-summary-container a {
+  background-color: var(--secondary-accent-clr);
+  text-decoration: none;
+  color: white;
+  font-family: var(--ff-primary);
+}
+
+.CartList .order-summary-container a:hover {
+  background-color: var(--primary-accent-clr);
+}
+
+@media (max-width: 768px) {
+  .CartList .cart-details-container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+
 }

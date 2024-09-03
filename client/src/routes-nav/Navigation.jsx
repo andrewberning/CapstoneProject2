@@ -49,7 +49,7 @@ export default function Navigation() {
         <Col xs="auto">
           <Navbar.Toggle aria-controls="offcanvasNavbar" onClick={handleOffcanvasShow} />
         </Col>
-        <Col className="flex-grow-1">
+        <Col className="search-container">
           <SearchForm />
         </Col>
         <Col xs="auto">

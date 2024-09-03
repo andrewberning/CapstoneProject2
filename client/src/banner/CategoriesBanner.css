@@ -1,8 +1,11 @@
 .CategoriesBanner {
   background-color: var(--primary-clr);
-  text-align: center;
+  min-height: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: var(--light-clr);
-  padding-block: 50px;
+  padding: 50px;
 }
 
 .categories-title-container h2 {

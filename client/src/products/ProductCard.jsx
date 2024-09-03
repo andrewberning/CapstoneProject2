@@ -39,7 +39,7 @@ export default function ProductCard({ id, name, price, image, category }) {
     <li className="ProductCard">
       <Link className="product-link card" to={`/${category}/${id}`}>
         <div className="product-img-container">
-          <img src={image} className="card-img" />
+          <img src={image} alt={name} className="card-img" />
         </div>
         <div className="card-body">
           <div className="product-item-details">
@@ -67,7 +67,7 @@ export default function ProductCard({ id, name, price, image, category }) {
       )}
       
       <button 
-        className="btn btn-primary mt-2"
+        className="btn"
         onClick={handleAddToCart} 
         disabled={added}
       >

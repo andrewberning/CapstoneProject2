@@ -1,5 +1,6 @@
 .CategoriesCardList {
-  margin-inline: 50px;
+  margin: 0 auto;
+  max-width: 1000px;
 }
 
 .CategoriesCardList .categories-list {
@@ -7,34 +8,36 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  
+  padding: 0;
+  margin: 0;
 }
 
-/* .CategoriesCardList .categories-list li {
+.CategoriesCardList .categories-list li {
   flex: 1 1 calc(33.33% - 20px); 
-  max-width: 300px;
-} */
+  max-width: calc(33.33% - 20px);
+  margin: 10px;
+}
 
 /* 2 cards per row on smaller screens */
-/* @media (max-width: 1080px) {
+@media (max-width: 1080px) {
   .CategoriesCardList .categories-list li {
     flex: 1 1 calc(50% - 20px); 
     max-width: 300px;
   }
-} */
+}
 
 /* 2 cards per row on smaller screens */
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   .CategoriesCardList .categories-list li {
     flex: 1 1 calc(50% - 20px); 
     max-width: calc(50% - 20px);
   }
-} */
+}
 
 /* 1 card per row on the smallest screens */
-/* @media (max-width: 480px) {
-  .categories-list li {
+@media (max-width: 480px) {
+  .CategoriesCardList .categories-list li {
     flex: 1 1 100%; 
     max-width: 100%;
   }
-} */
+}

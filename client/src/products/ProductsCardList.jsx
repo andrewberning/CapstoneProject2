@@ -30,7 +30,7 @@ export default function ProductsList() {
 
   return (
     <div className="ProductsCardList">
-      <h2 className="text-center">{category.charAt(0).toUpperCase() + category.slice(1)}</h2>
+      <h2 className="text-center">{category.toUpperCase()}</h2>
       <ul className="products-list">
         {products.map(product => (
           <ProductCard 
