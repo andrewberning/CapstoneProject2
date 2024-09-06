@@ -1,4 +1,4 @@
-# Capstone Project Two
+# Shoply
 
 [Shoply](https://shoply-frontend.onrender.com) is LIVE!!!
 
